@@ -1,0 +1,83 @@
+{
+	"script": {
+		"prefix": "_script",
+		"body": [
+			"--// Services",
+			"",
+			"local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
+			"",
+			"--// Variables",	
+			"",
+			"--// Packages",
+			"",
+			"--// Modules",
+			"",
+			"--// Constants",
+            "",
+            "--// Types",
+			"",
+			"--//----------------------------------------------"
+		]
+	},
+
+    "section": {
+        "prefix": "_section",
+        "body": [
+            "--------------------------------------------------------",
+            "-- $name",
+            "--------------------------------------------------------"
+        ]
+    },
+
+	"sep": {
+		"prefix": "_sep",
+		"body": "--------------------------------------------------------------------------------",
+	},
+
+	"header":{
+		"prefix":"_header",
+		"body": "-------------"
+	},
+
+	"module" : {
+		"prefix": "@module",
+		"body": [
+			"local $name = {}",
+			"",
+			"return $name"
+		]
+	},
+
+	"moduleFunction": {
+		"prefix": "@funcModule",
+		"body": [
+			"function ${TM_FILENAME_BASE}:$name()",
+			"\t",
+			"end",
+		]
+	},
+
+	"class" : {
+		"prefix": "@class",
+		"body": [
+			"local $name = {}",
+			"$name.__index = $name",
+			"",
+			"function $name.new()",
+			"\tlocal self = setmetatable({}, $name)",
+			"\t",
+			"\treturn self",
+			"end",
+			"",
+			"function $name:Method()",
+			"\t",
+			"end",
+			"",
+			"function $name:Destroy()",
+			"\t",
+			"end",
+			"",
+			"return $name"
+		]
+	}
+}

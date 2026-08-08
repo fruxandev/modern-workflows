@@ -1,0 +1,19 @@
+[package]
+name = "ihasf/modern"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+roact = "roblox/roact@1.4.4"
+janitor = "howmanysmall/janitor@1.18.3"
+signal = "sleitnick/signal@2.0.3"
+loader = "sleitnick/loader@2.0.0"
+streamable = "sleitnick/streamable@1.2.4"
+table-util = "sleitnick/table-util@1.2.1"
+spring = "sleitnick/spring@1.0.0"
+ser = "sleitnick/ser@1.0.5"
+comm = "sleitnick/comm@1.0.1"
+tree = "sleitnick/tree@1.1.0"
+profileservice = "brittonfischer/profileservice@2.1.5"
+replicaservice = "brittonfischer/replicaservice@0.1.0"

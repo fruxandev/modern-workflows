@@ -1,0 +1,18 @@
+# Project place file
+/Modern.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+sourcemap.json
+
+# Wally
+Packages/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code local files
+.vscode/*.log
