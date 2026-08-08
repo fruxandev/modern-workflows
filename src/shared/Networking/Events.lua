@@ -4,16 +4,19 @@ local Network = require(script.Parent.Network)
 -- Player Events
 --------------------------------------------------------
 
-local playerJoinEvent: Network.ServerToClientEvent<{ PlayerName: string }> = Network.ServerToClient()
-
 --------------------------------------------------------
 -- UI Events
 --------------------------------------------------------
 
+local touchPartEvent: Network.ClientToServerEvent<{}> = Network.ClientToServer()
+local transitionEvent: Network.ServerToClientEvent<{ Visible: boolean }> = Network.ServerToClient()
+
 return Network.define({
 	Player = {
-		SomeoneJoin = playerJoinEvent,
+		TouchPart = touchPartEvent,
 	},
 
-	UI = {},
+	UI = {
+		ToggleTransition = transitionEvent,
+	},
 })

@@ -1,21 +1,3 @@
---// Services
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
---// Variables
-
---// Packages
-
---// Modules
-
-local NetworkEvents = require(ReplicatedStorage.Shared.Networking.Events)
-
---// Constants
-
---// Types
-
---//----------------------------------------------
-
-task.wait(5)
-
-NetworkEvents.Player.SomeoneJoin:SendEveryone({ PlayerName = "Aerovah" })
+local Loader = require(ReplicatedStorage.Shared.Utility.Loader)
+Loader.LoadManagers(script.Services)
