@@ -12,7 +12,7 @@ function Loader.LoadManagers(folder: Folder)
 	for index, manager in managers do
 		if manager:IsA("ModuleScript") then
 			local accessed = require(manager) :: Manager
-			accessed:Setup()
+			accessed.Setup()
 			table.insert(setup, accessed)
 
 			print(`Successfully setup the manager: {manager.Name}!`)
@@ -23,7 +23,7 @@ function Loader.LoadManagers(folder: Folder)
 
 	for index, manager in setup do
 		task.spawn(function()
-			manager:Launch()
+			manager.Launch()
 		end)
 	end
 end

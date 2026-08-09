@@ -16,27 +16,27 @@ local Events = require(ReplicatedStorage.Shared.Networking.Events)
 
 --//----------------------------------------------
 
-local TestService = {}
+local TestService = {
+	CanToggleTransition = true,
+	TransitionEnabled = false,
+}
 
-function TestService:Launch()
+function TestService.Launch()
 	Events.Player.TouchPart:Receive(function(player: Player, data: {})
-		if not self.CanToggleTransition then
+		if not TestService.CanToggleTransition then
 			return
 		end
 
-		self.CanToggleTransition = false
-		self.TransitionEnabled = not self.TransitionEnabled
-		Events.UI.ToggleTransition:SendEveryone({ Visible = self.TransitionEnabled })
+		TestService.CanToggleTransition = false
+		TestService.TransitionEnabled = not TestService.TransitionEnabled
+		Events.UI.ToggleTransition:SendEveryone({ Visible = TestService.TransitionEnabled })
 
 		task.delay(5, function()
-			self.CanToggleTransition = true
+			TestService.CanToggleTransition = true
 		end)
 	end)
 end
 
-function TestService:Setup()
-	self.TransitionEnabled = false
-	self.CanToggleTransition = true
-end
+function TestService.Setup() end
 
 return TestService
